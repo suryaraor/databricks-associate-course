@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Databricks Certified Machine Learning Associate Exam</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <main>
+    <div style="text-align:center;margin-bottom:1.5rem;">
+      <img src="assets/badge.png" alt="Course Logo"
+        style="max-width:120px;width:30vw;height:auto;display:inline-block;vertical-align:middle;box-shadow:0 2px 8px rgba(31,82,98,0.10);border-radius:12px;background:#fff;" />
+    </div>
+    <h1>Databricks Certified Machine Learning Associate Exam</h1>
+   
+   
+<details open>
+      <summary><strong>Section 1: Databricks Machine Learning (38%)</strong></summary>
+      <ul>
+        <li>
+          <details>
+            <summary><strong>1.01</strong> Identify the best practices of an MLOps strategy</summary>
+            <div id="topic-1-01">
+              <h3>Best Practices of an MLOps Strategy</h3>
+              <p><strong>MLOps</strong> (Machine Learning Operations) is a set of practices that aims to deploy and
+                maintain machine learning models in production reliably and efficiently. It combines ML, DevOps, and
+                data engineering best practices.</p>
+              <ul>
+                <li><strong>Version Control:</strong> Use Git or similar tools for code, data, and model versioning.
+                  Track all changes for reproducibility.</li>
+                <li><strong>Automated Testing:</strong> Implement unit, integration, and data validation tests for ML
+                  code and pipelines.</li>
+                <li><strong>Continuous Integration/Continuous Deployment (CI/CD):</strong> Automate the build, test, and
+                  deployment of ML models using CI/CD pipelines (e.g., Azure DevOps, GitHub Actions).</li>
+                <li><strong>Experiment Tracking:</strong> Use tools like MLflow to log parameters, metrics, and
+                  artifacts for each experiment.</li>
+                <li><strong>Model Registry:</strong> Register models in a central registry (e.g., MLflow Model Registry,
+                  Unity Catalog) for lifecycle management.</li>
+                <li><strong>Reproducibility:</strong> Ensure that experiments and results can be reproduced by tracking
+                  code, data, environment, and random seeds.</li>
+                <li><strong>Monitoring:</strong> Monitor model performance, data drift, and system health in production.
+                  Set up alerts for anomalies.</li>
+                <li><strong>Collaboration:</strong> Foster collaboration between data scientists, engineers, and
+                  business stakeholders using shared tools and documentation.</li>
+                <li><strong>Security & Compliance:</strong> Protect data and models, manage access, and ensure
+                  compliance with regulations (e.g., GDPR, HIPAA).</li>
+                <li><strong>Rollback & Recovery:</strong> Have strategies for rolling back to previous model versions
+                  and recovering from failures.</li>
+              </ul>
+              <h4>Example MLOps Workflow in Databricks</h4>
+              <ol>
+                <li>Develop and test models in collaborative notebooks.</li>
+                <li>Track experiments and results with MLflow.</li>
+                <li>Register the best model in Unity Catalog or MLflow Model Registry.</li>
+                <li>Deploy the model using batch, real-time, or streaming endpoints.</li>
+                <li>Monitor model performance and retrain as needed.</li>
+              </ol>
+              <h4>Practice Question</h4>
+              <p><strong>Which of the following is NOT a best practice in MLOps?</strong></p>
+              <ul>
+                <li>A. Tracking experiments and model versions</li>
+                <li>B. Manual deployment of models without automation</li>
+                <li>C. Monitoring model performance in production</li>
+                <li>D. Using CI/CD pipelines for model deployment</li>
+              </ul>
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> B. Manual deployment of models without automation is not a best practice.
+                  Automation ensures reliability and repeatability.</p>
+              </details>
+            </div>
+          
+        </details>
+        </li>
+        <li>
+          <details>
+            <summary><strong>1.02</strong> Identify the advantages of using ML runtimes</summary>
+            <div id="topic-1-02">
+              <h3>Advantages of Using ML Runtimes</h3>
+              <p><strong>ML runtimes</strong> are pre-configured environments optimized for machine learning workloads.
+                In Databricks, ML runtimes include popular ML/DL libraries, GPU support, and integrations for experiment
+                tracking and model management.</p>
+              <ul>
+                <li><strong>Ready-to-use Environments:</strong> No need to manually install or configure ML libraries
+                  (e.g., scikit-learn, TensorFlow, PyTorch, XGBoost).</li>
+                <li><strong>Optimized Performance:</strong> Libraries and drivers are tuned for distributed computing
+                  and GPU acceleration.</li>
+                <li><strong>Consistency:</strong> Ensures all team members use the same environment, reducing “works on
+                  my machine” issues.</li>
+                <li><strong>Security & Compliance:</strong> Regularly updated with security patches and compliance
+                  features.</li>
+                <li><strong>Integration:</strong> Built-in support for MLflow, Feature Store, and Unity Catalog for
+                  seamless experiment tracking and model management.</li>
+                <li><strong>Scalability:</strong> Easily scale compute resources for large datasets and distributed
+                  training.</li>
+                <li><strong>Support for AutoML:</strong> ML runtimes are required for using Databricks AutoML features.
+                </li>
+              </ul>
+              <h4>Example</h4>
+              <p>When you select a Databricks ML Runtime for your cluster, you get immediate access to all major ML
+                libraries and tools, saving setup time and reducing errors.</p>
+              <h4>Practice Question</h4>
+              <p><strong>What is a key benefit of using a Databricks ML Runtime?</strong></p>
+              <ul>
+                <li>A. You must manually install all ML libraries</li>
+                <li>B. It provides a pre-configured environment with optimized libraries</li>
+                <li>C. It only supports basic Python scripts</li>
+                <li>D. It does not support distributed training</li>
+              </ul>
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> B. ML Runtimes provide a pre-configured environment with optimized libraries
+                  for ML workloads.</p>
+              </details>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><strong>1.03</strong> Identify how AutoML facilitates model/feature selection.</summary>
+            <div id="topic-1-03">
+              <h3>How AutoML Facilitates Model/Feature Selection</h3>
+              <p><strong>AutoML</strong> (Automated Machine Learning) automates the process of model and feature
+                selection, making it easier and faster to build high-quality models.</p>
+              <ul>
+                <li><strong>Automated Model Selection:</strong> AutoML tests multiple algorithms (e.g., logistic
+                  regression, random forest, XGBoost) and selects the best-performing one based on evaluation metrics.
+                </li>
+                <li><strong>Feature Engineering:</strong> Automatically creates, transforms, and selects features that
+                  improve model performance.</li>
+                <li><strong>Hyperparameter Tuning:</strong> Searches for the best hyperparameters for each algorithm.
+                </li>
+                <li><strong>Data Preprocessing:</strong> Handles missing values, encoding, scaling, and outlier
+                  detection automatically.</li>
+                <li><strong>Experiment Tracking:</strong> Logs all runs, parameters, and results for easy comparison and
+                  reproducibility.</li>
+                <li><strong>Model Explainability:</strong> Provides feature importance and model interpretation tools.
+                </li>
+              </ul>
+              <h4>Example in Databricks</h4>
+              <p>With Databricks AutoML, you can launch an AutoML experiment from the UI or with a single command.
+                AutoML will:</p>
+              <ol>
+                <li>Analyze your dataset and problem type (classification/regression).</li>
+                <li>Try multiple models and feature sets.</li>
+                <li>Return the best model, code, and feature importance report.</li>
+              </ol>
+              <h4>Practice Question</h4>
+              <p><strong>What does AutoML do to help with feature selection?</strong></p>
+              <ul>
+                <li>A. Randomly drops features</li>
+                <li>B. Automatically creates and selects the most relevant features</li>
+                <li>C. Only uses the first column in the dataset</li>
+                <li>D. Ignores feature importance</li>
+              </ul>
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> B. AutoML automatically creates and selects the most relevant features for
+                  the model.</p>
+              </details>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><strong>1.04</strong> Identify the advantages AutoML brings to the model development process
+            </summary>
+            <div id="topic-1-04">
+              <h3>Advantages AutoML Brings to the Model Development Process</h3>
+              <ul>
+                <li><strong>Speed:</strong> Automates repetitive tasks, reducing time to deploy a model.</li>
+                <li><strong>Accessibility:</strong> Enables non-experts to build and deploy models with minimal coding.
+                </li>
+                <li><strong>Consistency:</strong> Standardizes the model development process, reducing human error.</li>
+                <li><strong>Comprehensive Search:</strong> Explores a wide range of algorithms, features, and
+                  hyperparameters.</li>
+                <li><strong>Best Practices:</strong> Applies proven data science and engineering best practices
+                  automatically.</li>
+                <li><strong>Reproducibility:</strong> Logs all steps, parameters, and results for easy review and audit.
+                </li>
+                <li><strong>Model Explainability:</strong> Provides feature importance and model interpretation tools.
+                </li>
+                <li><strong>Integration:</strong> Seamlessly integrates with MLflow, Feature Store, and Unity Catalog in
+                  Databricks.</li>
+              </ul>
+              <h4>Example</h4>
+              <p>Databricks AutoML can automatically generate a notebook with the code for the best model, making it
+                easy to review, customize, and productionize.</p>
+              <h4>Practice Question</h4>
+              <p><strong>Which is NOT an advantage of using AutoML?</strong></p>
+              <ul>
+                <li>A. Faster model development</li>
+                <li>B. Manual hyperparameter tuning only</li>
+                <li>C. Consistent application of best practices</li>
+                <li>D. Model explainability</li>
+              </ul>
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> B. AutoML automates hyperparameter tuning; manual tuning only is not an
+                  advantage.</p>
+              </details>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><strong>1.05</strong> Identify the benefits of creating feature store tables at the account level
+              in Unity Catalog in Databricks vs at the workspace level</summary>
+            <div id="topic-1-05">
+              <h3>Benefits of Creating Feature Store Tables at the Account Level in Unity Catalog vs Workspace Level
+              </h3>
+              <ul>
+                <li><strong>Centralized Management:</strong> Account-level tables are accessible across all workspaces
+                  in the account, enabling organization-wide feature sharing and governance.</li>
+                <li><strong>Data Consistency:</strong> Ensures all teams use the same, validated features, reducing
+                  duplication and errors.</li>
+                <li><strong>Access Control:</strong> Unity Catalog provides fine-grained access control and auditing at
+                  the account level, improving security and compliance.</li>
+                <li><strong>Collaboration:</strong> Facilitates collaboration between teams and projects by making
+                  features universally available.</li>
+                <li><strong>Scalability:</strong> Supports large-scale ML initiatives by allowing features to be reused
+                  and managed centrally.</li>
+                <li><strong>Lineage & Governance:</strong> Track feature usage, lineage, and ownership across the
+                  organization.</li>
+                <li><strong>Workspace-level tables</strong> are only available within a single workspace, limiting reuse
+                  and collaboration.</li>
+              </ul>
+              <h4>Example</h4>
+              <p>Creating a feature table at the account level in Unity Catalog allows a data science team in one
+                workspace to use features engineered by another team in a different workspace, with consistent access
+                controls and audit trails.</p>
+              <h4>Practice Question</h4>
+              <p><strong>What is a key benefit of account-level feature store tables in Unity Catalog?</strong></p>
+              <ul>
+                <li>A. Features are only available in one workspace</li>
+                <li>B. Features can be shared and governed across all workspaces in the account</li>
+                <li>C. No access control is possible</li>
+                <li>D. Features cannot be reused</li>
+              </ul>
+              <details>
+                <summary>Show Answer</summary>
+                <p><strong>Answer:</strong> B. Account-level tables enable sharing and governance across all workspaces
+                  in the account.</p>
+              </details>
+            </div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><strong>1.06</strong> Create a feature store table in Unity Catalog</summary>
+            <div id="topic-1-06"></div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><strong>1.07</strong> Write data to a feature store table</summary>
+            <div id="topic-1-07"></div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><strong>1.08</strong> Train a model with features from a feature store table.</summary>
+            <div id="topic-1-08"></div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><strong>1.09</strong> Score a model using features from a feature store table.</summary>
+            <div id="topic-1-09"></div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><strong>1.10</strong> Describe the differences between online and offline feature tables</summary>
+            <div id="topic-1-10"></div>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><strong>1.11</strong> Identify the best run using the MLflow Client API.</summary>
+            <div id="topic-1-11">
+            </div>
+          </details>
+        </li>
+      </ul>
+      </details>
+  </main>
+  <script>
+    // Smooth expand/collapse for details
+    document.querySelectorAll('details').forEach(d => {
+      d.addEventListener('toggle', function () {
+        if (d.open) {
+          d.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Quiz feedback (for future interactive quizzes)
+    document.querySelectorAll('.quiz-question input[type="radio"]').forEach(input => {
+      input.addEventListener('change', function () {
+        const parent = input.closest('.quiz-question');
+        parent.querySelectorAll('.quiz-feedback').forEach(fb => fb.style.display = 'none');
+        if (input.dataset.correct === 'true') {
+          parent.querySelector('.quiz-feedback.correct').style.display = 'block';
+        } else {
+          parent.querySelector('.quiz-feedback.incorrect').style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

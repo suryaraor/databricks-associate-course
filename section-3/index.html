@@ -1,4 +1,22 @@
- <details>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Databricks Certified Machine Learning Associate Exam</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <main>
+    <div style="text-align:center;margin-bottom:1.5rem;">
+      <img src="assets/badge.png" alt="Course Logo"
+        style="max-width:120px;width:30vw;height:auto;display:inline-block;vertical-align:middle;box-shadow:0 2px 8px rgba(31,82,98,0.10);border-radius:12px;background:#fff;" />
+    </div>
+    <h1>Databricks Certified Machine Learning Associate Exam</h1>
+   
+<details>
       <summary><strong>Section 3: Model Development (31%)</strong></summary>
       <ul>
         <li>
@@ -102,3 +120,31 @@
       </ul>
     </details>
     
+   
+  </main>
+  <script>
+    // Smooth expand/collapse for details
+    document.querySelectorAll('details').forEach(d => {
+      d.addEventListener('toggle', function () {
+        if (d.open) {
+          d.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Quiz feedback (for future interactive quizzes)
+    document.querySelectorAll('.quiz-question input[type="radio"]').forEach(input => {
+      input.addEventListener('change', function () {
+        const parent = input.closest('.quiz-question');
+        parent.querySelectorAll('.quiz-feedback').forEach(fb => fb.style.display = 'none');
+        if (input.dataset.correct === 'true') {
+          parent.querySelector('.quiz-feedback.correct').style.display = 'block';
+        } else {
+          parent.querySelector('.quiz-feedback.incorrect').style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
